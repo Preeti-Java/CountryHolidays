@@ -23,7 +23,7 @@ This is a Spring Boot project that demonstrates the use of REST APIs to manage c
 ## Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-repository-url.git
+   git clone https://github.com/Preeti-Java/CountryHolidays.git
    
 2. Navigate to the project directory:
 cd your-project-directory
