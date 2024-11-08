@@ -14,4 +14,6 @@ public interface HolidayService {
 
 	List<HolidayAccessBean> findAll();
 
+	List<HolidayAccessBean> findAllHolidayByHolidayDate(String holidayDate);
+
 }

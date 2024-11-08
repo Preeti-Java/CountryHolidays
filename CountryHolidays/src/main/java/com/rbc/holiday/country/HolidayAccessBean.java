@@ -21,6 +21,9 @@ public class HolidayAccessBean {
 	@Column(name = "holidayName")
 	private String holidayName;
 	
+	@Column(name="holidayDate")
+	private String holidayDate;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "countryId", nullable = false)
     private CountryAccessBean countryAccessBean;
@@ -61,6 +64,18 @@ public class HolidayAccessBean {
 
 	public void setCountryAccessBean(CountryAccessBean countryAccessBean) {
 		this.countryAccessBean = countryAccessBean;
+	}
+
+
+
+	public String getHolidayDate() {
+		return holidayDate;
+	}
+
+
+
+	public void setHolidayDate(String holidayDate) {
+		this.holidayDate = holidayDate;
 	}
 	
 	

@@ -18,4 +18,6 @@ public interface HolidayRepository extends JpaRepository<HolidayAccessBean, Long
 
 	boolean existsByHolidayName(String holidayName);
 
+	List<HolidayAccessBean> findAllByHolidayDate(String holidayDate);
+
 }

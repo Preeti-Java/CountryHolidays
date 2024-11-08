@@ -35,6 +35,20 @@ public class HolidayController {
 		return new ResponseEntity<>(holidayAccessBeansList,HttpStatus.OK);
 	}
 	
+	//Holiday List By holiday Date 
+	@GetMapping("/{holidayDate}")
+	public ResponseEntity<List<HolidayAccessBean>> getAllHolidaysByCountryIdAndActive(@PathVariable String holidayDate) throws BadRequestException{
+		if(holidayDate == null) 
+			throw new BadRequestException("Holiday Date Request is empty");
+		
+		List<HolidayAccessBean> holidayAccessBeansList = holidayService.findAllHolidayByHolidayDate(holidayDate);
+		if(holidayAccessBeansList.isEmpty())
+			throw new DataNotFoundException("No Holiday Found in record with Id: "+holidayDate);
+		
+		return new ResponseEntity<>(holidayAccessBeansList,HttpStatus.OK);
+	}
+	
+	
 	//Holiday List By Country Id
 	@GetMapping("/{countryId}")
 	public ResponseEntity<List<HolidayAccessBean>> getAllHolidaysByCountryIdAndActive(@PathVariable Long countryId) throws BadRequestException{

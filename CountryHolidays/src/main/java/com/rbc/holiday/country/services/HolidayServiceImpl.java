@@ -75,4 +75,15 @@ public class HolidayServiceImpl implements HolidayService{
 		return holidayLists;
 	}
 
+	@Override
+	public List<HolidayAccessBean> findAllHolidayByHolidayDate(String holidayDate) {
+		List<HolidayAccessBean> holidayList = holidayRepository.findAllByHolidayDate(holidayDate);
+		 // Check if the holiday name is empty or not
+		if(holidayList.isEmpty())
+			throw new DataNotFoundException("Holiday Not Exist with Holiday Date:"+holidayDate);
+		
+		return holidayList;
+	}
+		
+
 }
