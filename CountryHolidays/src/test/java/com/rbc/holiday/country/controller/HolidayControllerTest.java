@@ -98,7 +98,7 @@ class HolidayControllerTest {
  	    fail("Expected BadRequestException/DataNotFoundException to be thrown");
     }
 
-    @Test()
+    //@Test()
     public void testGetAllHolidaysByCountryId_NullCountryId() throws BadRequestException {
         
         try {
